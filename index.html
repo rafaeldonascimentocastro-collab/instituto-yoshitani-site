@@ -135,6 +135,14 @@ textarea{min-height:96px;resize:vertical}
 .ch div{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
 .ch small{display:block;color:var(--muted)}
 button.copy{font:inherit;font-size:.85rem;padding:6px 14px;border-radius:999px;border:2px solid var(--plum);background:transparent;color:var(--fg);cursor:pointer}
+.soc{width:26px;height:26px;flex:none;color:var(--pink)}
+.ch>div{justify-content:flex-start;gap:14px}
+.ch .copy{margin-left:auto}
+.sbtn{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:#fff;transition:background .15s,transform .15s}
+.sbtn:hover{background:var(--orange);color:var(--ink);transform:translateY(-2px)}
+.sbtn svg{width:20px;height:20px}
+.socials{display:flex;gap:10px;align-items:center}
+.sbtn:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 footer{background:var(--ink);color:#fff;padding-block:44px;font-size:.92rem}
 footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap}
 footer a{color:#fff}
@@ -150,6 +158,10 @@ footer a{color:#fff}
  <symbol id="i-swing" viewBox="0 0 100 100"><path d="M6 10 H94" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M30 10 V68 M70 10 V68" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="18" y="66" width="64" height="11" rx="5.5" fill="currentColor"/><path d="M12 10 L6 92 M88 10 L94 92" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/></symbol>
  <symbol id="i-heart" viewBox="0 0 100 100"><path d="M50 86 C14 58 8 36 22 22 C34 10 46 18 50 28 C54 18 66 10 78 22 C92 36 86 58 50 86Z" fill="currentColor"/></symbol>
  <symbol id="i-basket" viewBox="0 0 100 100"><path d="M14 44 H86 L76 86 H24Z" fill="currentColor"/><path d="M30 44 C30 14 70 14 70 44" stroke="currentColor" stroke-width="6" fill="none"/><circle cx="38" cy="36" r="10" fill="#FF9330"/><circle cx="58" cy="32" r="9" fill="#F0508A"/><circle cx="50" cy="42" r="8" fill="#2FBF7A"/></symbol>
+ <symbol id="s-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></symbol>
+ <symbol id="s-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 22v-8.500h2.900l.5-3.400h-3.400V8c0-1 .4-1.700 1.800-1.700H17V3.300C16.700 3.200 15.700 3 14.600 3c-2.600 0-4.300 1.600-4.300 4.400v2.700H7.400v3.400h2.900V22z"/></symbol>
+ <symbol id="s-wa" viewBox="0 0 24 24"><path d="M3.200 20.800l1.300-4.700A9 9 0 1 1 8 19.500z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path fill="currentColor" d="M9 7.800c-.4.500-.7 1.200-.4 2.200.6 2 2.800 4.300 5 5 1 .3 1.700 0 2.200-.4.300-.3.300-.7 0-.9l-1.600-.9c-.3-.2-.6-.1-.8.100l-.5.600c-1-.4-2.200-1.600-2.600-2.600l.6-.5c.2-.2.300-.5.100-.8L9.900 7.800c-.2-.2-.6-.2-.9 0z"/></symbol>
+ <symbol id="s-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7.500l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
  <symbol id="i-note" viewBox="0 0 100 100"><path d="M38 70 V18 L82 10 V60" stroke="currentColor" stroke-width="7" fill="none" stroke-linejoin="round"/><ellipse cx="28" cy="72" rx="14" ry="10" fill="currentColor"/><ellipse cx="72" cy="62" rx="14" ry="10" fill="currentColor"/></symbol>
  <symbol id="i-hands" viewBox="0 0 100 100"><path d="M50 52 C20 32 22 8 38 8 C44 8 48 12 50 16 C52 12 56 8 62 8 C78 8 80 32 50 52Z" fill="#fff" opacity=".92"/><path d="M6 62 C6 56 12 54 18 58 L34 68 H62 C68 68 70 74 64 76 L40 78 L62 86 L88 70 C94 66 100 72 94 78 L66 96 C60 100 54 100 48 98 L18 90 C10 88 6 82 6 74Z" fill="currentColor"/></symbol>
 </defs></svg>
@@ -303,10 +315,10 @@ footer a{color:#fff}
   <p class="eyebrow">Contato</p><h2>Fale com o Instituto</h2>
   <p class="lead">Quer ser voluntário, propor uma parceria, apoiar uma campanha ou tirar dúvidas?</p>
   <div class="ch">
-   <div><span><small>WhatsApp</small><span id="num">(11) 96074-9878</span></span><button class="copy" id="copynum" type="button" data-copy="(11) 96074-9878">Copiar</button></div>
-   <div><span><small>Instagram</small><a id="lnk-ig" href="https://www.instagram.com/instituto.yoshitani/" target="_blank" rel="noopener">@instituto.yoshitani</a></span></div>
-   <div><span><small>Facebook</small><a id="lnk-fb" href="https://www.facebook.com/FundacaoYoshitani/" target="_blank" rel="noopener">Yoshitani Foundation</a></span></div>
-   <div><span><small>E-mail</small><span class="pending" data-f="email">a confirmar</span></span></div>
+   <div><svg class="soc" aria-hidden="true"><use href="#s-wa"/></svg><span><small>WhatsApp</small><span id="num">(11) 96074-9878</span></span><button class="copy" id="copynum" type="button" data-copy="(11) 96074-9878">Copiar</button></div>
+   <div><svg class="soc" aria-hidden="true"><use href="#s-ig"/></svg><span><small>Instagram</small><a id="lnk-ig" href="https://www.instagram.com/instituto.yoshitani/" target="_blank" rel="noopener">@instituto.yoshitani</a></span></div>
+   <div><svg class="soc" aria-hidden="true"><use href="#s-fb"/></svg><span><small>Facebook</small><a id="lnk-fb" href="https://www.facebook.com/FundacaoYoshitani/" target="_blank" rel="noopener">Yoshitani Foundation</a></span></div>
+   <div><svg class="soc" aria-hidden="true"><use href="#s-mail"/></svg><span><small>E-mail</small><span class="pending" data-f="email">a confirmar</span></span></div>
   </div>
  </div>
  <form id="cform" style="background:var(--bg)">
@@ -322,7 +334,7 @@ footer a{color:#fff}
 <div class="stripe"></div>
 <footer><div class="wrap">
  <div><b>Instituto Yoshitani – Solidariedade e Cidadania</b><br>Organização social sem fins lucrativos. CNPJ: <span data-f="cnpj">a confirmar</span>.</div>
- <div><a href="https://www.instagram.com/instituto.yoshitani/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/FundacaoYoshitani/" target="_blank" rel="noopener">Facebook</a> · <a href="#transparencia">Privacidade</a></div>
+ <div class="socials"><a class="sbtn" id="f-ig" href="https://www.instagram.com/instituto.yoshitani/" target="_blank" rel="noopener" aria-label="Instagram do Instituto Yoshitani"><svg aria-hidden="true"><use href="#s-ig"/></svg></a><a class="sbtn" id="f-fb" href="https://www.facebook.com/FundacaoYoshitani/" target="_blank" rel="noopener" aria-label="Facebook do Instituto Yoshitani"><svg aria-hidden="true"><use href="#s-fb"/></svg></a><a class="sbtn" id="f-wa" href="#contato" aria-label="WhatsApp do Instituto Yoshitani"><svg aria-hidden="true"><use href="#s-wa"/></svg></a> <a href="#transparencia" style="margin-left:8px">Privacidade</a></div>
 </div></footer>
 
 <script>
@@ -343,7 +355,7 @@ var CONFIG={
  document.querySelectorAll("[data-f]").forEach(function(e){var v=CONFIG[e.getAttribute("data-f")];if(v){e.textContent=v;e.classList.remove("pending")}});
  if(!CONFIG.mostrarFaixaRascunho){document.getElementById("draft").hidden=true}
  function set(id,u,t){var a=document.getElementById(id);a.href=u;a.textContent=t}
- set("lnk-ig",CONFIG.instagramUrl,CONFIG.instagramTexto);set("lnk-fb",CONFIG.facebookUrl,CONFIG.facebookTexto);
+ set("lnk-ig",CONFIG.instagramUrl,CONFIG.instagramTexto);document.getElementById("f-ig").href=CONFIG.instagramUrl;document.getElementById("f-fb").href=CONFIG.facebookUrl;document.getElementById("f-wa").href="https://wa.me/"+CONFIG.whatsappDigitos;set("lnk-fb",CONFIG.facebookUrl,CONFIG.facebookTexto);
  document.getElementById("num").textContent=CONFIG.whatsappExibicao;
  document.getElementById("copynum").setAttribute("data-copy",CONFIG.whatsappExibicao);
  var F=CONFIG.fotos||{};
