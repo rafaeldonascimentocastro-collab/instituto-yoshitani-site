@@ -19,4 +19,4 @@ No final do `index.html`, edite **somente** o objeto `CONFIG`:
 
 ## Arquivos
 - `index.html` — site completo (logo e foto embutidos).
-- `assets/` — logotipo (fundo branco e transparente), ícone e favicon.
+- `assets/` — logotipo (fundo branco e transparente), versão completa com “Solidariedade e Cidadania”, ícone e favicon.
