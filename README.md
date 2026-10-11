@@ -1,6 +1,6 @@
 # Instituto Yoshitani – Solidariedade e Cidadania · Site (modelo)
 
-Site institucional de página única (HTML/CSS/JS, sem dependências), criado pela Growth.Etc em projeto pro bono.
+Site institucional de página única (HTML/CSS/JS, sem dependências).
 **Status: versão para validação da direção.** Nenhum dado institucional foi inventado: itens pendentes aparecem como “a confirmar”.
 
 ## Como usar
