@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rafaeldonascimentocastro-collab.github.io/instituto-yoshitani-site/sitemap.xml

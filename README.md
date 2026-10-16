@@ -1,22 +1,31 @@
-# Instituto Yoshitani – Solidariedade e Cidadania · Site (modelo)
+# Instituto Yoshitani – Solidariedade e Cidadania
 
-Site institucional de página única (HTML/CSS/JS, sem dependências).
-**Status: versão para validação da direção.** Nenhum dado institucional foi inventado: itens pendentes aparecem como “a confirmar”.
+Site institucional do Instituto Yoshitani: voluntariado, doação de alimentos e apoio a idosos e crianças na Grande São Paulo.
 
-## Como usar
-Abra `index.html` no navegador, ou publique via GitHub Pages (Settings → Pages → branch `main`, pasta `/root`).
+Site estático (HTML/CSS/JS, sem dependências), publicado pelo GitHub Pages a cada push na branch `main`.
 
-## Como preencher
-No final do `index.html`, edite **somente** o objeto `CONFIG`:
-`nomeOficial`, `cnpj`, `natureza`, `fundacao`, `missao`, `regiao`, `email`, WhatsApp, redes sociais e `fotos`
-(chaves: `hero`, `hero2`, `hero3`, `g1`…`g6`, `retrato`). Campos vazios exibem “a confirmar”.
+## Como atualizar dados
 
-## Pendências antes de publicar
-- Dados oficiais (CNPJ, natureza jurídica, fundação, missão, região, e-mail) — responsabilidade do Instituto.
-- Autorização de uso de imagem de todas as pessoas fotografadas e dos logos de parceiros.
-- Logotipo em alta resolução / vetorial (SVG, PDF ou AI) para substituir os arquivos de `assets/`, que foram ampliados e limpos a partir de imagens de baixa resolução.
-- Revisão jurídica do texto de privacidade e dos canais de contato.
+No final do `index.html`, edite o objeto `CONFIG`. Campos vazios ficam ocultos no site.
+
+| Campo | O que ativa |
+|---|---|
+| `nomeOficial`, `cnpj`, `natureza`, `fundacao`, `missao` | Ficha em "Quem somos"; CNPJ também perto dos botões, no rodapé e na política de privacidade |
+| `regiao` | Região usada nos textos do site |
+| `email`, `agendaUrl` | Botões de e-mail e agenda para empresas; canal de e-mail no contato |
+| `pixChave` | Bloco de doação via PIX |
+| `instagramPosts` | Posts recentes do Instagram exibidos no site |
+| `numeros`, `documentos` | Resultados documentados e documentos de transparência |
+| `fotos` (`g1`…`g6`) | Galeria "Momentos" (só aparece com fotos autorizadas) |
+| `formEndpoint` | Cópia das inscrições em planilha (Google Apps Script ou Formspree) |
+| `ga4Id` ou `plausibleDomain` | Medição de visitas e cliques nos botões |
+
+## Domínio próprio
+
+Ao publicar em domínio próprio, troque a URL atual em `index.html` (canonical, og:url, og:image, JSON-LD e `CONFIG.siteUrl`), `robots.txt` e `sitemap.xml`, e crie o arquivo `CNAME` com o domínio.
 
 ## Arquivos
-- `index.html` — site completo (logo e foto embutidos).
-- `assets/` — logotipo (fundo branco e transparente), versão completa com “Solidariedade e Cidadania”, ícone e favicon.
+
+- `index.html` — site completo.
+- `assets/` — logotipos, ícones, imagem de compartilhamento (`og-image.jpg`) e fotos otimizadas em WebP.
+- `robots.txt`, `sitemap.xml`, `site.webmanifest` — indexação e ícones.
